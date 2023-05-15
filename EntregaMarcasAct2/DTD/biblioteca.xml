@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8" standalone='yes'?>
+<!DOCTYPE biblioteca[
+
+    <!--ESTRUCTURA GENERAL -->
+    <!ELEMENT biblioteca (libros, revistas, periodicos)>
+
+    <!-- ELEMENTOS Y ATRIBUTOS DE LIBROS -->
+    <!ELEMENT libros (libro+)>
+    <!ELEMENT libro (titulo, capitulos)>
+    <!ATTLIST 
+            libro id CDATA #REQUIRED
+            tipo_clase CDATA #REQUIRED 
+            numero_paginas CDATA #REQUIRED 
+        >
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT capitulos (capitulo+)>
+    <!ELEMENT capitulo (titulo, indice, sinopsis, contenido)>
+    <!ATTLIST capitulo numero_paginas CDATA #REQUIRED>
+    <!ELEMENT indice (#PCDATA)>
+    <!ELEMENT sinopsis (#PCDATA)>
+    <!ELEMENT contenido (#PCDATA)>
+
+    <!-- ELEMENTOS Y ATRIBUTOS DE REVISTAS -->
+    <!ELEMENT revistas (revista+)>
+    <!ELEMENT revista (titulo_revista, numero_revista, indice_revista, secciones_revista)>
+    <!ATTLIST revista 
+            id CDATA #REQUIRED 
+            tipo_clase CDATA #REQUIRED 
+            numero_paginas CDATA #REQUIRED>
+    <!ELEMENT titulo_revista (#PCDATA)>
+    <!ELEMENT numero_revista (#PCDATA)>
+    <!ELEMENT indice_revista (#PCDATA)>
+    <!ELEMENT secciones_revista (seccion_revista+)>
+    <!ELEMENT seccion_revista (contenido_revista+)>
+    <!ATTLIST seccion_revista numero_paginas CDATA #REQUIRED>
+    <!ELEMENT contenido_revista (#PCDATA)>
+
+    <!-- ELEMENTOS Y ATRIBUTOS DE PERIODICOS -->
+    <!ELEMENT periodicos (periodico+)>
+    <!ELEMENT periodico (secciones_periodico+)>
+    <!ATTLIST periodico
+            id CDATA #REQUIRED
+            tipo_clase (nacional|internacional) #REQUIRED
+            fecha_publicacion CDATA #REQUIRED
+    >
+    <!ELEMENT secciones_periodico (seccion_periodico+)>
+    <!ELEMENT seccion_periodico (articulos)>
+    <!ATTLIST seccion_periodico 
+            tipo_seccion (economica|opinion|deportes|nacional|internacional) #REQUIRED
+    >
+    <!ELEMENT articulos (articulo+)>
+    <!ELEMENT articulo (contenido+)>
+    <!ATTLIST articulo autor CDATA #REQUIRED>
+    <!ELEMENT contenido_periodio (#PCDATA)>
+]>
+
+<biblioteca>
+    <libros>
+        <libro id="L0001" tipo_clase="novela" numero_paginas="1000">
+            <titulo>En busca del Java perdido</titulo>
+            <capitulos>
+
+                <capitulo numero_paginas="250">
+                    <titulo>Titulo del Primer Capitulo</titulo>
+                    <indice>Indice</indice>
+                    <sinopsis>Sinopsis</sinopsis>
+                    <contenido>http://www.ejemplo.com/libro/L0001/ejemplo1</contenido>
+                </capitulo>
+
+                <capitulo numero_paginas="250">
+                    <titulo>Titulo del Segundo Capitulo</titulo>
+                    <indice>Indice</indice>
+                    <sinopsis>Sinopsis</sinopsis>
+                    <contenido>http://www.ejemplo.com/libro/L0002/ejemplo2</contenido>
+                </capitulo>
+
+                <capitulo numero_paginas="250">
+                    <titulo>Titulo del Tercer Capitulo</titulo>
+                    <indice>Indice</indice>
+                    <sinopsis>Sinopsis</sinopsis>
+                    <contenido>http://www.ejemplo.com/libro/L0002/ejemplo3</contenido>
+                </capitulo>
+
+                <capitulo numero_paginas="250">
+                    <titulo>Titulo del Cuarto Capitulo</titulo>
+                    <indice>Indice</indice>
+                    <sinopsis>Sinopsis</sinopsis>
+                    <contenido>http://www.ejemplo.com/libro/L0002/ejemplo4</contenido>
+                </capitulo>
+
+            </capitulos>
+        </libro>
+
+        <libro id="L0002" tipo_clase="infantil" numero_paginas="1000">
+            <titulo>Un Kotlin enamorado</titulo>
+            <capitulos>
+
+                <capitulo numero_paginas="250">
+                    <titulo>Titulo del Primer Capitulo</titulo>
+                    <indice>Indice</indice>
+                    <sinopsis>Sinopsis</sinopsis>
+                    <contenido>http://www.ejemplo.com/libro/L0002/ejemplo1</contenido>
+                </capitulo>
+
+                <capitulo numero_paginas="250">
+                    <titulo>Titulo del Segundo Capitulo</titulo>
+                    <indice>Indice</indice>
+                    <sinopsis>Sinopsis</sinopsis>
+                    <contenido>http://www.ejemplo.com/libro/L0002/ejemplo2</contenido>
+                </capitulo>
+
+                <capitulo numero_paginas="250">
+                    <titulo>Titulo del Tercer Capitulo</titulo>
+                    <indice>Indice</indice>
+                    <sinopsis>Sinopsis</sinopsis>
+                    <contenido>http://www.ejemplo.com/libro/L0002/ejemplo3</contenido>
+                </capitulo>
+
+                <capitulo numero_paginas="250">
+                    <titulo>Titulo del Cuarto Capitulo</titulo>
+                    <indice>Indice</indice>
+                    <sinopsis>Sinopsis</sinopsis>
+                    <contenido>http://www.ejemplo.com/libro/L0002/ejemplo4</contenido>
+                </capitulo>
+                
+            </capitulos>
+        </libro>
+
+        <libro id="L0003" tipo_clase="didactico" numero_paginas="1000">
+            <titulo>La mala suerte de Angular</titulo>
+            <capitulos>
+
+                <capitulo numero_paginas="250">
+                    <titulo>Titulo del Primer Capitulo</titulo>
+                    <indice>Indice</indice>
+                    <sinopsis>Sinopsis</sinopsis>
+                    <contenido>http://www.ejemplo.com/libro/L0003/ejemplo1</contenido>
+                </capitulo>
+
+                <capitulo numero_paginas="250">
+                    <titulo>Titulo del Segundo Capitulo</titulo>
+                    <indice>Indice</indice>
+                    <sinopsis>Sinopsis</sinopsis>
+                    <contenido>http://www.ejemplo.com/libro/L0003/ejemplo2</contenido>
+                </capitulo>
+
+                <capitulo numero_paginas="250">
+                    <titulo>Titulo del Tercer Capitulo</titulo>
+                    <indice>Indice</indice>
+                    <sinopsis>Sinopsis</sinopsis>
+                    <contenido>http://www.ejemplo.com/libro/L0003/ejemplo3</contenido>
+                </capitulo>
+
+                <capitulo numero_paginas="250">
+                    <titulo>Titulo del Cuarto Capitulo</titulo>
+                    <indice>Indice</indice>
+                    <sinopsis>Sinopsis</sinopsis>
+                    <contenido>http://www.ejemplo.com/libro/L0003/ejemplo4</contenido>
+                </capitulo>
+                
+            </capitulos>
+        </libro>
+    </libros>
+
+    <revistas>
+        <revista id="R0001" tipo_clase="informatica" numero_paginas="100">
+            <titulo_revista>Titulo Revista</titulo_revista>
+            <numero_revista>Numero Revista</numero_revista>
+            <indice_revista>Indice</indice_revista>
+            <secciones_revista>
+                <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+            </secciones_revista>
+        </revista>
+
+        <revista id="R0002" tipo_clase="corazon" numero_paginas="100">
+        <titulo_revista>Titulo Revista</titulo_revista>
+            <numero_revista>Numero Revista</numero_revista>
+            <indice_revista>Indice</indice_revista>
+            <secciones_revista>
+                <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+            </secciones_revista>
+        </revista>
+
+        <revista id="R0003" tipo_clase="coches" numero_paginas="100">
+        <titulo_revista>Titulo Revista</titulo_revista>
+            <numero_revista>Numero Revista</numero_revista>
+            <indice_revista>Indice</indice_revista>
+            <secciones_revista>
+                <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+            </secciones_revista>
+        </revista>
+
+        <revista id="R0004" tipo_clase="investigacion" numero_paginas="100">
+        <titulo_revista>Titulo Revista</titulo_revista>
+            <numero_revista>Numero Revista</numero_revista>
+            <indice_revista>Indice</indice_revista>
+            <secciones_revista>
+                <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+            </secciones_revista>
+        </revista>
+
+        <revista id="R0005" tipo_clase="otras" numero_paginas="100">
+        <titulo_revista>Titulo Revista</titulo_revista>
+            <numero_revista>Numero Revista</numero_revista>
+            <indice_revista>Indice</indice_revista>
+            <secciones_revista>
+                <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+
+                 <seccion_revista numero_paginas="20">
+                    <contenido_revista> http://www.ejemplo.com/revista/R0004/ejemplo1</contenido_revista>
+                </seccion_revista>
+            </secciones_revista>
+        </revista>
+    </revistas>
+
+    <periodicos>
+        <periodico id="P0001" tipo_clase="nacional" fecha_publicacion="12/12/12">
+            <secciones_periodico>
+                <seccion_periodico tipo_seccion="economica">
+                    <articulos>
+                        <articulo autor="nombre_autor">
+                            <contenido>Contenido</contenido>
+                        </articulo>
+                    </articulos>
+                </seccion_periodico>
+
+               <seccion_periodico tipo_seccion="opinion">
+                    <articulos>
+                        <articulo autor="nombre_autor">
+                            <contenido>Contenido</contenido>
+                        </articulo>
+                    </articulos>
+                </seccion_periodico>
+
+                <seccion_periodico tipo_seccion="economica">
+                    <articulos>
+                        <articulo autor="nombre_autor">
+                            <contenido>Contenido</contenido>
+                        </articulo>
+                    </articulos>
+                </seccion_periodico>
+
+                <seccion_periodico tipo_seccion="economica">
+                    <articulos>
+                        <articulo autor="nombre_autor">
+                            <contenido>Contenido</contenido>
+                        </articulo>
+                    </articulos>
+                </seccion_periodico>
+
+                <seccion_periodico tipo_seccion="economica">
+                    <articulos>
+                        <articulo autor="nombre_autor">
+                            <contenido>Contenido</contenido>
+                        </articulo>
+                    </articulos>
+                </seccion_periodico>
+
+            </secciones_periodico>
+        </periodico>
+    </periodicos>
+</biblioteca>
